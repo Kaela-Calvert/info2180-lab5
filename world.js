@@ -7,7 +7,7 @@ window.onload = function() {
   loadTextBtn.addEventListener('click', function() {
 
     httpRequest = new XMLHttpRequest();
-    var userInput=document.getElementById("country").value;
+    var userInput=encodeURIComponent(document.getElementById("country").value);
     httpRequest.onreadystatechange = loadQuote;
     httpRequest.open("GET", "world.php?country="+ userInput, true);
     httpRequest.send();
@@ -16,7 +16,7 @@ window.onload = function() {
   loadCitiesBtn.addEventListener("click", function(){
 
     httpRequest = new XMLHttpRequest();
-    var userInput=document.getElementById("country").value;
+    var userInput=encodeURIComponent(document.getElementById("country").value);
     httpRequest.onreadystatechange = loadCities;
     httpRequest.open("GET", "world.php?country="+ userInput+"&lookup=cities", true);
     httpRequest.send();

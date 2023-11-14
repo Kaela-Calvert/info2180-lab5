@@ -20,7 +20,7 @@ if (isset($_GET['lookup']) && $_GET['lookup'] === 'cities') {
         $stmt=$conn->query("SELECT countries.name, cities.district, countries.population FROM countries INNER JOIN cities ON cities.name=countries.name; ");
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
     ?>
-    <table>
+    <table class="center">
         <thead>
             <tr>
                 <th>Country Name</th>
@@ -42,7 +42,7 @@ if (isset($_GET['lookup']) && $_GET['lookup'] === 'cities') {
     }
 } else {
 ?>
-    <table>
+    <table class="center">
         <thead>
             <tr>
                 <th>Country Name</th>
